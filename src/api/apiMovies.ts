@@ -7,7 +7,15 @@ export interface SearchMovies {
   imdbID: string;
 }
 
+export interface MovieById extends SearchMovies {
+  imdbRating: string;
+  Plot: string;
+}
+
 export interface Movies {
+  map(
+    arg0: (movie: SearchMovies) => import('react/jsx-runtime').JSX.Element
+  ): unknown;
   movies: SearchMovies[];
 }
 
@@ -16,4 +24,11 @@ export async function getMovies(inputSearch: string): Promise<Movies> {
   if (!res.ok) throw new Error('Something went wrong with fetch');
   const { Search } = await res.json();
   return Search;
+}
+
+export async function getMovieById(id: string): Promise<MovieById> {
+  const res = await fetch(`${API_URL}&i=${id}`);
+  if (!res.ok) throw new Error('Something went wrong with fetch');
+  const data = await res.json();
+  return data;
 }

@@ -3,9 +3,14 @@ import ListCard from './ListCard';
 import { useLoaderData } from 'react-router-dom';
 import { getMovies } from '../../api/apiMovies';
 import { SearchMovies, Movies } from '../../api/apiMovies';
+import { ParamParseKey, Params, ActionFunctionArgs } from 'react-router-dom';
 
-interface Params {
-  title: string;
+const Paths = {
+  title: '/search/:title',
+} as const;
+
+interface SearchLoaderArgs extends ActionFunctionArgs {
+  params: Params<ParamParseKey<typeof Paths.title>>;
 }
 
 const List: FC = () => {
@@ -13,15 +18,15 @@ const List: FC = () => {
   console.log(movies);
   return (
     <>
-      {movies.movies.map((movie: SearchMovies) => (
+      {movies.map((movie: SearchMovies) => (
         <ListCard key={movie.imdbID} movie={movie} />
       ))}
     </>
   );
 };
 
-export async function loader({ params }: { params: Params }) {
-  const movies = await getMovies(params.title);
+export async function loader({ params }: SearchLoaderArgs) {
+  const movies = await getMovies(params.title ?? '');
   return movies;
 }
 

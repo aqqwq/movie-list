@@ -1,11 +1,12 @@
 import { FC } from 'react';
-import SearchList from '../src/features/list/SearchList';
+import SearchList from '../features/list/SearchList';
+import { Link } from 'react-router-dom';
 const Header: FC = () => {
   return (
     <div>
-      <div>Brand</div>
+      <Link to="/">Brand</Link>
       <SearchList />
-      <div>Profile</div>
+      <Link to="/profile">Profile</Link>
     </div>
   );
 };
