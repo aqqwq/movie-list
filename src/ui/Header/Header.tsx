@@ -7,7 +7,7 @@ const Header: FC = () => {
   return (
     <div className={styles.header}>
       <Link className={(styles['link'], styles.brand)} to="/list">
-        Brand
+        Cine
       </Link>
       <SearchList />
       <Link className={styles.link} to="/profile">

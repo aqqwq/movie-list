@@ -2,7 +2,7 @@ import { FC } from 'react';
 import ListCard from './listCard/ListCard';
 import { useLoaderData } from 'react-router-dom';
 import { getMovies } from '../../api/apiMovies';
-import { SearchMovies, Movies } from '../../api/apiMovies';
+import { SearchMovies } from '../../api/apiMovies';
 import { ParamParseKey, Params, ActionFunctionArgs } from 'react-router-dom';
 import styles from './List.module.scss';
 
@@ -15,7 +15,9 @@ interface SearchLoaderArgs extends ActionFunctionArgs {
 }
 
 const List: FC = () => {
-  const movies = useLoaderData() as Movies;
+  const movies = useLoaderData() as SearchMovies[];
+  console.log(movies);
+
   console.log(movies);
   return (
     <div className={styles.list}>

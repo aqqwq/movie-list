@@ -10,12 +10,13 @@ export interface SearchMovies {
 export interface MovieById extends SearchMovies {
   imdbRating: string;
   Plot: string;
+  Genre: string;
+  Runtime: string;
+  totalSeasons: string;
+  Rated: string;
 }
 
 export interface Movies {
-  map(
-    arg0: (movie: SearchMovies) => import('react/jsx-runtime').JSX.Element
-  ): unknown;
   movies: SearchMovies[];
 }
 
