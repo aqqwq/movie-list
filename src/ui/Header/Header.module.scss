@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  color: #fff;
+  font-size: 18px;
+
+  .link {
+    color: #fff;
+    text-decoration-line: none;
+  }
+
+  .brand {
+    font-size: 40px;
+    color: #fff;
+    text-decoration-line: none;
+  }
+}

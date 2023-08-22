@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import ListCard from './ListCard';
+import ListCard from './listCard/ListCard';
 import { useLoaderData } from 'react-router-dom';
 import { getMovies } from '../../api/apiMovies';
 import { SearchMovies, Movies } from '../../api/apiMovies';
 import { ParamParseKey, Params, ActionFunctionArgs } from 'react-router-dom';
+import styles from './List.module.scss';
 
 const Paths = {
   title: '/search/:title',
@@ -17,11 +18,11 @@ const List: FC = () => {
   const movies = useLoaderData() as Movies;
   console.log(movies);
   return (
-    <>
+    <div className={styles.list}>
       {movies.map((movie: SearchMovies) => (
         <ListCard key={movie.imdbID} movie={movie} />
       ))}
-    </>
+    </div>
   );
 };
 

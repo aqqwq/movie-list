@@ -1,20 +1,25 @@
 import React, { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './SearchList.module.scss';
+import { useAppSelector } from '../../../hooks';
 
 const SearchList: FC = () => {
   const [searchValue, setSearchValue] = useState<string>('');
   const navigate = useNavigate();
+  const username = useAppSelector((state) => state.user.username);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!searchValue) return;
+
+    if (!searchValue || !username) return;
     navigate(`/search/${searchValue}`);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <input
         type="text"
         value={searchValue}
+        placeholder="Поиск фильмов, сериалов, аниме"
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setSearchValue(e.target.value)
         }

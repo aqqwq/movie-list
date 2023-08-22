@@ -1,0 +1,19 @@
+.form {
+  input {
+    width: 300px;
+    height: 26px;
+    padding: 6px 0px 6px 12px;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s ease-in;
+
+    &:focus {
+      width: 400px;
+      outline: 2px solid #9e49ff;
+      outline-offset: 4px;
+    }
+  }
+}
