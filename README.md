@@ -2,6 +2,7 @@
 A simple application to track the status of watching movies, series, anime.
 
 # API
+<<<<<<< HEAD
 Im using the free  [omdb](https://www.omdbapi.com/).
 
 <!-- This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -29,3 +30,6 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list -->
+=======
+Im using the free API [omdb](https://www.omdbapi.com/).
+>>>>>>> 85a5b7ab75bda07bd06b37ecc42a94357fe1ea89
