@@ -16,9 +16,7 @@ interface SearchLoaderArgs extends ActionFunctionArgs {
 
 const List: FC = () => {
   const movies = useLoaderData() as SearchMovies[];
-  console.log(movies);
 
-  console.log(movies);
   return (
     <div className={styles.list}>
       {movies.map((movie: SearchMovies) => (

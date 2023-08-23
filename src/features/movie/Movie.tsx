@@ -20,7 +20,7 @@ interface MovieLoaderArgs extends ActionFunctionArgs {
 
 const Movie: FC = () => {
   const movie = useLoaderData() as MovieById;
-  console.log(movie);
+
   return (
     <>
       <div className={styles.movie}>
