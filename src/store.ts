@@ -1,4 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
+import userReducer from './features/user/userSlice';
+import listReducer from './features/profile/ProfileList/profileListSlice';
+
+// import storage from 'redux-persist/lib/storage';
 // import {
 //   persistStore,
 //   persistReducer,
@@ -9,10 +12,8 @@ import { configureStore } from '@reduxjs/toolkit';
 //   PURGE,
 //   REGISTER,
 // } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
-import userReducer from './features/user/userSlice';
-import listReducer from './features/profile/ProfileList/profileListSlice';
 
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 const store = configureStore({
   reducer: {
     user: userReducer,

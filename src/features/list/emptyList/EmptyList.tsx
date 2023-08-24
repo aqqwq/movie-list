@@ -1,5 +1,6 @@
-import { FC } from 'react';
 import styles from './EmptyList.module.scss';
+
+import { FC } from 'react';
 const EmptyList: FC = () => {
   return (
     <div className={styles.emptyList}>

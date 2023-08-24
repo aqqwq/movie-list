@@ -19,6 +19,9 @@ export interface MovieById extends SearchMovies {
 export interface Movies {
   movies: SearchMovies[];
 }
+export interface MoviesRender {
+  movies: MovieById[];
+}
 
 export async function getMovies(inputSearch: string): Promise<Movies> {
   const res = await fetch(`${API_URL}&s=${inputSearch}`);

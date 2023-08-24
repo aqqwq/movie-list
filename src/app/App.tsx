@@ -1,14 +1,13 @@
-import { FC } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-import List, { loader as listLoader } from '../features/list/List';
-import EmptyList from '../features/list/emptyList/EmptyList';
-import Profile from '../features/profile/Profile';
 import SearchError from '../ui/Errors/SearchError';
-import Movie, { loader as movieLoader } from '../features/movie/Movie';
 import AppLayout from '../ui/AppLayout/AppLayout';
-
 import CreateUser from '../features/user/CreateUser/CreateUser';
+import Profile from '../features/profile/Profile';
+import Movie, { loader as movieLoader } from '../features/movie/Movie';
+import EmptyList from '../features/list/emptyList/EmptyList';
+import List, { loader as listLoader } from '../features/list/List';
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { FC } from 'react';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
         errorElement: <SearchError />,
       },
       {
-        path: '/profile/:nickName',
+        path: '/profile/:nickName/:status',
         element: <Profile />,
       },
       {

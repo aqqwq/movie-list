@@ -1,14 +1,16 @@
-import { FC } from 'react';
+import SelectFolder from './SelectFolder';
+
+import styles from './Movie.module.scss';
+
+import { getMovieById, MovieById } from '../../api/apiMovies';
+
 import {
   ActionFunctionArgs,
   useLoaderData,
   Params,
   ParamParseKey,
 } from 'react-router-dom';
-import { getMovieById } from '../../api/apiMovies';
-import { MovieById } from '../../api/apiMovies';
-import SelectFolder from './SelectFolder';
-import styles from './Movie.module.scss';
+import { FC } from 'react';
 
 const Paths = {
   id: '/movie/:id',

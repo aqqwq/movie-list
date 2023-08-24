@@ -1,10 +1,16 @@
-import { FC } from 'react';
 import ListCard from './listCard/ListCard';
-import { useLoaderData } from 'react-router-dom';
-import { getMovies } from '../../api/apiMovies';
-import { SearchMovies } from '../../api/apiMovies';
-import { ParamParseKey, Params, ActionFunctionArgs } from 'react-router-dom';
+
 import styles from './List.module.scss';
+
+import { getMovies, SearchMovies } from '../../api/apiMovies';
+
+import {
+  useLoaderData,
+  ParamParseKey,
+  Params,
+  ActionFunctionArgs,
+} from 'react-router-dom';
+import { FC } from 'react';
 
 const Paths = {
   title: '/search/:title',

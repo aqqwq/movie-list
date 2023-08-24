@@ -8,6 +8,8 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    // 'plugin:import/errors',
+    'plugin:import/warnings',
   ],
   overrides: [
     {
@@ -25,7 +27,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', 'import'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -34,5 +36,24 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'index',
+          'sibling',
+          'parent',
+          'internal',
+          'external',
+          'builtin',
+          'object',
+          'type',
+        ],
+        'newlines-between': 'always-and-inside-groups',
+        alphabetize: {
+          order: 'desc',
+        },
+      },
+    ],
   },
 };

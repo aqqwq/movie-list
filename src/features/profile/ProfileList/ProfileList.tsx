@@ -1,13 +1,28 @@
-import { FC } from 'react';
-import ProfileCard from '../ProfileCard/ProfileCard';
-import styles from './ProfileList.module.scss';
-import { useAppSelector } from '../../../hooks';
 import { listState } from './profileListSlice';
+
+import ProfileCard from '../ProfileCard/ProfileCard';
+import { useAppSelector } from '../../../hooks';
+
+import { useParams } from 'react-router-dom';
+import { FC } from 'react';
+
 const ProfileList: FC = () => {
-  const listData = useAppSelector((state) => state.list.list);
+  const { nickName, status } = useParams();
+  console.log(nickName, status);
+  const { current, planning, complete, paused, dropped } = useAppSelector(
+    (state) => state.list
+  );
+
+  let moviesToRender: listState[] = [];
+  if (status === 'current') moviesToRender = current;
+  if (status === 'planning') moviesToRender = planning;
+  if (status === 'complete') moviesToRender = complete;
+  if (status === 'paused') moviesToRender = paused;
+  if (status === 'dropped') moviesToRender = dropped;
+
   return (
-    <div className={styles.list}>
-      {listData.map((movie: listState) => (
+    <div>
+      {moviesToRender.map((movie) => (
         <ProfileCard key={movie.imdbID} movie={movie} />
       ))}
     </div>

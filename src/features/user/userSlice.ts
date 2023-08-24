@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
 import { PayloadAction } from '@reduxjs/toolkit/dist/createAction';
+import { createSlice } from '@reduxjs/toolkit';
 interface userState {
   username: string;
 }

@@ -1,36 +1,59 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { PayloadAction } from '@reduxjs/toolkit/dist/createAction';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface listState {
+  imdbID: string;
   Poster: string;
   Title: string;
   Year: string;
-  imdbID: string;
   imdbRating: string;
   Genre: string;
   Plot: string;
 }
 
-export interface listMovie {
-  movie: listState;
-}
-export interface listArr {
-  list: listState[];
+export interface ProfileListState {
+  current: listState[];
+  planning: listState[];
+  complete: listState[];
+  paused: listState[];
+  dropped: listState[];
 }
 
-const initialState: listArr = {
-  list: [],
+const initialState: ProfileListState = {
+  current: [],
+  planning: [],
+  complete: [],
+  paused: [],
+  dropped: [],
 };
 
 const profileListSlice = createSlice({
-  name: 'list',
+  name: 'profileList',
   initialState,
   reducers: {
-    addToCurrentList(state, action: PayloadAction<listState>) {
-      state.list.push(action.payload);
+    addToCurrent: (state, action) => {
+      state.current.push(action.payload);
+    },
+    addToPlanning: (state, action) => {
+      state.planning.push(action.payload);
+    },
+    addToComplete(state, action: PayloadAction<listState>) {
+      state.complete.push(action.payload);
+    },
+    addToPaused(state, action: PayloadAction<listState>) {
+      state.paused.push(action.payload);
+    },
+    addToDropped(state, action: PayloadAction<listState>) {
+      state.dropped.push(action.payload);
     },
   },
 });
 
-export const { addToCurrentList } = profileListSlice.actions;
+export const {
+  addToCurrent,
+  addToPlanning,
+  addToComplete,
+  addToPaused,
+  addToDropped,
+} = profileListSlice.actions;
+
 export default profileListSlice.reducer;

@@ -1,6 +1,8 @@
-import { FC } from 'react';
 import { SearchMovies } from '../../../api/apiMovies';
+
 import { useNavigate } from 'react-router-dom';
+import { FC } from 'react';
+
 interface ListCard {
   movie: SearchMovies;
 }

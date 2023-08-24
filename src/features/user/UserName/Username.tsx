@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
 import { useAppSelector } from '../../../hooks';
+
+import React, { FC } from 'react';
 
 const Username: FC = () => {
   const username = useAppSelector((state) => state.user.username);

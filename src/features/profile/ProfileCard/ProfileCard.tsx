@@ -1,6 +1,8 @@
-import { FC } from 'react';
 import styles from './ProfileCard.module.scss';
+
 import { listMovie } from '../ProfileList/profileListSlice';
+
+import { FC } from 'react';
 const ProfileCard: FC<listMovie> = ({ movie }) => {
   return (
     <div className={styles.card}>

@@ -1,7 +1,9 @@
-import React, { FC, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styles from './SearchList.module.scss';
+
 import { useAppSelector } from '../../../hooks';
+
+import { useNavigate } from 'react-router-dom';
+import React, { FC, useState } from 'react';
 
 const SearchList: FC = () => {
   const [searchValue, setSearchValue] = useState<string>('');

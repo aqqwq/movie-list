@@ -1,8 +1,10 @@
-import React, { FC, useState } from 'react';
-import { useAppDispatch } from '../../../hooks';
-import { updateName } from '../userSlice';
-import { useNavigate } from 'react-router-dom';
 import styles from './CreateUser.module.scss';
+
+import { updateName } from '../userSlice';
+import { useAppDispatch } from '../../../hooks';
+
+import { useNavigate } from 'react-router-dom';
+import React, { FC, useState } from 'react';
 
 const createUser: FC = () => {
   const [username, setUserName] = useState<string>('');

@@ -1,5 +1,6 @@
-import { FC } from 'react';
 import styles from './SearchError.module.scss';
+
+import { FC } from 'react';
 const SearchError: FC = () => {
   return (
     <div className={styles.error}>
