@@ -5,7 +5,7 @@ import { Provider } from 'react-redux/es/exports';
 import ReactDOM from 'react-dom/client';
 
 import React from 'react';
-import './app/index.css';
+import './app/index.scss';
 
 // import { PersistGate } from 'redux-persist/integration/react';
 

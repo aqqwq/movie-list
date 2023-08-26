@@ -24,7 +24,13 @@
       margin-top: 22px;
       align-items: center;
       /* justify-content: space-between; */
-      width: 500px;
+      width: 650px;
+
+      .remove {
+        padding-left: 200px;
+        background-color: #131315;
+        border: none;
+      }
 
       .title {
         font-size: 30px;

@@ -5,7 +5,7 @@ import { useAppSelector } from '../../../hooks';
 
 import { useParams } from 'react-router-dom';
 import { FC } from 'react';
-
+export let moviesToRender: listState[] = [];
 const ProfileList: FC = () => {
   const { nickName, status } = useParams();
   console.log(nickName, status);
@@ -13,7 +13,6 @@ const ProfileList: FC = () => {
     (state) => state.list
   );
 
-  let moviesToRender: listState[] = [];
   if (status === 'current') moviesToRender = current;
   if (status === 'planning') moviesToRender = planning;
   if (status === 'complete') moviesToRender = complete;

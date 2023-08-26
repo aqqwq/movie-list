@@ -1,3 +1,5 @@
+import styles from './ListCard.module.scss';
+
 import { SearchMovies } from '../../../api/apiMovies';
 
 import { useNavigate } from 'react-router-dom';
@@ -6,7 +8,7 @@ import { FC } from 'react';
 interface ListCard {
   movie: SearchMovies;
 }
-import styles from './ListCard.module.scss';
+
 const ListCard: FC<ListCard> = ({ movie }) => {
   const navigate = useNavigate();
   const handleClick = () => {
